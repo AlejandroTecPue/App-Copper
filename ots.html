@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>OTs Asignadas</title>
+  <link rel="stylesheet" href="css/styles.css"/>
+  <!-- Carga la librería MSAL desde CDN -->
+  <script src="https://alcdn.msauth.net/browser/2.19.0/js/msal-browser.min.js"></script>
+</head>
+<body>
+  <!-- Botón hamburguesa y sidebar (si ya los tienes implementados) -->
+  <button id="hamburger-btn" aria-label="Abrir menú">
+    <img src="img/lista.png" alt="Menú hamburguesa" width="15">
+  </button>
+  <div id="sidebar-container"></div>
+
+  <!-- Contenido principal -->
+  <main class="dashboard-content">
+    <header class="main-header">
+      <h1>Lista de OT's</h1>
+      <p>Consulta las órdenes de trabajo y su estado</p>
+    </header>
+    
+    <section class="table-section">
+      <button id="btnLogin">Iniciar sesion</button>
+      <button id="btnListarOTs">Listar OT's asignadas</button>
+      <table class="table-ots" id="tabla-OTs">
+        <thead>
+          <tr>
+            <th>OT</th>
+            <th>Status</th>
+            <th>Cliente</th>
+            <th>Dibujos</th>
+            <th>Piezas Completadas</th>
+            <th>Fecha de Entrega</th>
+            <th>Relevancia</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- Se llenará dinámicamente -->
+        </tbody>
+      </table>
+    </section>
+  </main>
+  <script src="js/main.js"></script>
+</body>
+</html>

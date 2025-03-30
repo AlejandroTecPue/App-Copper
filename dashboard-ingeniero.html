@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Cooper Ingeniería - Ingeniero</title>
+  <link rel="stylesheet" href="css/styles.css"/>
+  <script src="https://alcdn.msauth.net/browser/2.29.0/js/msal-browser.min.js"></script>
+
+</head>
+<body>
+
+  <!-- Botón hamburguesa -->
+  <button id="hamburger-btn" aria-label="Abrir menú">
+    <img src="img/lista.png" alt="Menú hamburguesa" width="15">
+  </button>
+  <!-- Contenedor para la sidebar (puedes cargarlo con fetch si lo deseas) -->
+  <div id="sidebar-container"></div>
+
+  <!-- Contenido principal -->
+  <main class="main-content">
+    <!-- Encabezado / Saludo -->
+    <header class="main-header">
+      <h2>¡Hola, Josué!</h2>
+      <p>Es momento de asignar actividades. ¡Vamos!</p>
+      <a href="dashboard-ots.html" class="btn-accion">OT’s o dibujos a asignar →</a>
+    </header>
+
+    <!-- Tarjetas de información -->
+    <section class="cards-info">
+      <div class="card">
+        <h3>OT’s pendientes</h3>
+        <p>Asignadas por Jefe. F</p>
+        <span class="card-number">6</span>
+      </div>
+      <div class="card">
+        <h3>Avisos</h3>
+        <p>Ivan Largo reportó duda en dibujo OT191</p>
+      </div>
+      <div class="card">
+        <h3>Delay</h3>
+        <p>OT181, OT223 y OT345 presentan retraso</p>
+      </div>
+    </section>
+
+    <!-- Sección de trabajadores -->
+    <section class="trabajadores-section">
+      <h3>Trabajadores</h3>
+      <table class="tabla-trabajadores">
+        <thead>
+          <tr>
+            <th>Operador</th>
+            <th>OT asignada</th>
+            <th>Dibujo</th>
+            <th>Tiempo</th>
+            <th>Actividades</th>
+            <th>Acción</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- Ejemplo: en cada fila guardamos el email (UPN) en data-upn -->
+          <tr>
+            <td data-upn="practicante1@cooper.com.mx">Gonzalo</td>
+            <td>189</td>
+            <td>2.451</td>
+            <td>1:45:00</td>
+            <td>5/9</td>
+            <td>
+              <button class="btn-asignar" data-operador="Ivan Largo">Asignar OT</button>
+              <button id="btnLogin">Iniciar sesion</button>
+            </td>
+          </tr>
+          <tr>
+            <td data-upn="trabajador2@tuempresa.com">Oscar</td>
+            <td>245</td>
+            <td>1.45</td>
+            <td>0:37:00</td>
+            <td>6/12</td>
+            <td>
+              <button class="btn-asignar" data-operador="Oscar">Asignar OT</button>
+            </td>
+          </tr>
+          <!-- Agrega más filas según necesites -->
+        </tbody>
+      </table>
+    </section>
+  </main>
+
+<div id="modal-asignar" class="modal">
+  <div class="modal-content">
+    <span class="close-modal">&times;</span>
+    <h2>Asignar OT a <span id="operador-nombre"></span></h2>
+    
+    <!-- Formulario principal -->
+    <form id="formAsignarOT">
+      <!-- Campos básicos -->
+      <label for="ot">OT:</label>
+      <input type="text" id="ot" placeholder="Ej. 9999" required>
+
+      <label for="tiempo">Tiempo estimado:</label>
+      <input type="text" id="tiempo" placeholder="Ej. 1:00:00" required>
+      
+      <!-- Campo para Fecha de Entrega -->
+      <label for="fechaEntrega">Fecha de Entrega:</label>
+      <input type="date" id="fechaEntrega" required />
+
+      <!-- Checklist de maquinado -->
+      <div class="checklist-container">
+        <h3>Material y Maquinado</h3>
+        <div class="checklist-maquinado">
+          <label><input type="checkbox" name="maquinado-460" value="CNC"> CNC</label>
+          <label><input type="checkbox" name="maquinado-460" value="Fresadora1"> Fresadora 1</label>
+          <label><input type="checkbox" name="maquinado-460" value="Fresadora2"> Fresadora 2</label>
+          <label><input type="checkbox" name="maquinado-460" value="Fresadora3"> Fresadora 3</label>
+          <label><input type="checkbox" name="maquinado-460" value="Torno"> Torno</label>
+          <label><input type="checkbox" name="maquinado-460" value="Rectificado"> Rectificado</label>
+          <label><input type="checkbox" name="maquinado-460" value="Corte_por_Hilo"> Corte por hilo</label>
+        </div>
+      </div>
+      
+      <!-- Sección de avisos -->
+      <div class="avisos-container">
+        <h3>Avisos</h3>
+        <textarea id="avisos" placeholder="Escribe aquí tus avisos"></textarea>
+        <input type="hidden" id="fechaAviso" value="">
+      </div>
+      
+        <!-- Sección de dibujos -->
+        <div class="dibujos-container">
+          <h3>Dibujos de la OT</h3>
+          <label for="numDibujos">Número de dibujos:</label>
+          <input type="number" id="numDibujos" min="1" value="1">
+          
+          <!-- Contenedor donde se generarán los campos de carga -->
+          <div id="contenedorDibujos"></div>
+        </div>
+
+        
+        <!-- Campo oculto para almacenar el UPN del trabajador -->
+        <input type="hidden" id="trabajadorUPN" />
+        
+        <button type="submit" class="btn-guardar">Guardar</button>
+      
+
+    </form>
+  </div>
+</div>
+
+
+  <script src="js/main.js"></script>
+</body>
+</html>

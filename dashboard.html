@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Dashboard - Cooper Ingeniería</title>
+  <link rel="stylesheet" href="css/styles.css"/>
+</head>
+<body>
+  <!-- Botón hamburguesa y sidebar se mantienen fuera del contenedor si así lo deseas -->
+  <button id="hamburger-btn" aria-label="Abrir menú">
+    <img src="img/lista.png" alt="Menú hamburguesa" width="15">
+  </button>
+  <div id="sidebar-container"></div>
+
+  <!-- Contenedor principal del dashboard -->
+ 
+  <main class="main-content">
+      
+      <!-- Sección de widgets (asignaciones, tiempos, etc.) -->
+      <section class="widgets-container">
+        <div class="widget">
+          <h3>Asignaciones del día</h3>
+          <p class="ots-link">
+            <span>OT's a torno</span>
+            <a href="ots.html" class="btn-green">Ir</a>
+          </p>
+        </div>
+        <div class="widget">
+          <h3>7h 45min</h3>
+          <p>Último tiempo de maquinados</p>
+        </div>
+        <div class="widget">
+          <h3>En proceso 55%</h3>
+          <p>Estatus de actividades a hoy</p>
+        </div>
+      </section>
+      
+      
+      <!-- Gráfica + Calendario -->
+      <section class="charts-calendar">
+        <div class="chart">
+          <h3>Progreso semanal</h3>
+          <!-- Placeholder de la gráfica, podrías usar Chart.js, Highcharts, etc. -->
+          <div class="chart-placeholder">
+            <p>Aquí va la gráfica (ej. Chart.js)</p>
+          </div>
+        </div>
+
+        <div class="calendar">
+          <h3>Marzo 2025</h3>
+          <div class="calendar-box">
+            <!-- Aquí podrías integrar un calendario real o algo estático de ejemplo -->
+            <p>14</p>
+            <p>Junta RH</p>
+          </div>
+          <button class="btn-add-event">+ Add Events</button>
+        </div>
+      </section>
+  </main>
+  <script src="js/main.js"></script>
+</body>
+</html>

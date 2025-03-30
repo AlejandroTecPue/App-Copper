@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Detalle OT</title>
+  <link rel="stylesheet" href="css/styles.css"/>
+  <script src="https://alcdn.msauth.net/browser/2.29.0/js/msal-browser.min.js"></script>
+</head>
+<body>
+  <button id="hamburger-btn" aria-label="Abrir menú">
+    <img src="img/lista.png" alt="Menú hamburguesa" width="15">
+  </button>
+  <div id="sidebar-container"></div>
+  
+  <main class="main-content">
+    <header class="main-header">
+      <h2 id="otHeader">OT</h2>
+      
+    </header>
+    
+    <!-- Sección de Detalle -->
+    <section class="ot-details">
+      <!-- Tabs, si deseas -->
+      <div class="ot-tabs">
+        <button class="active">Dibujos</button>
+        <button>Completados</button>
+        <button>En espera</button>
+      </div>
+      
+      <!-- Lista de Dibujos -->
+      <div class="ot-drawings-list" id="dibujosList">
+        <!-- Se llenará dinámicamente -->
+      </div>
+      
+      <!-- Avisos -->
+      <aside class="ot-notices">
+        <h3>Avisos</h3>
+        <ul id="avisosList">
+          <!-- Se llenará con los avisos del archivo .txt -->
+        </ul>
+      </aside>
+    </section>
+  </main>
+  <script src="js/main.js"></script>
+</body>
+</html>

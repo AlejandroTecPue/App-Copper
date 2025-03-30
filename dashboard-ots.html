@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Dashboard Ingeniero - Lista de OTs</title>
+  <link rel="stylesheet" href="css/styles.css"/>
+</head>
+<body>
+  <!-- Botón hamburguesa fijo -->
+  <button id="hamburger-btn" aria-label="Abrir menú">
+    <img src="img/hamburger.png" alt="Menú hamburguesa" width="25">
+  </button>
+  
+  <!-- Sidebar con opciones para el Ingeniero -->
+  <nav id="sidebar-container" class="sidebar">
+    <div class="sidebar-header">
+      <img src="img/logo.png" alt="Cooper Ingeniería" class="sidebar-logo">
+      <h2>Ingeniero</h2>
+    </div>
+    <ul class="sidebar-menu">
+      <li><a href="dashboard-ots.html">Lista de OTs</a></li>
+      <li><a href="asignar.html">Asignar</a></li>
+      <!-- Puedes agregar más opciones según necesites -->
+    </ul>
+  </nav>
+  
+  <!-- Contenido principal -->
+  <main class="dashboard-content">
+    <header class="main-header">
+      <h1>Lista de OT's</h1>
+      <p>Consulta las órdenes de trabajo y su estado</p>
+    </header>
+    
+    <!-- Tabla de OTs -->
+    <section class="table-section">
+      <table class="table-ots">
+        <thead>
+          <tr>
+            <th>OT</th>
+            <th>Status</th>
+            <th>Cliente</th>
+            <th>Dibujos</th>
+            <th>Piezas Completadas</th>
+            <th>Fecha de Entrega</th>
+            <th>Relevancia</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>#358</td>
+            <td><span class="status pending">Pending</span></td>
+            <td>Gestamp</td>
+            <td>4</td>
+            <td>2</td>
+            <td>14 marzo 2025</td>
+            <td>Alta</td>
+          </tr>
+          <tr>
+            <td>#460</td>
+            <td><span class="status completed">Completed</span></td>
+            <td>Persico</td>
+            <td>2</td>
+            <td>4</td>
+            <td>14 marzo 2025</td>
+            <td>Media</td>
+          </tr>
+          <!-- Más filas de ejemplo -->
+        </tbody>
+      </table>
+    </section>
+  </main>
+  
+  <script src="js/main.js"></script>
+</body>
+</html>

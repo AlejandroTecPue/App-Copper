@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Cooper Ingeniería - Login</title>
+  <link rel="stylesheet" href="css/styles.css"/>
+</head>
+<body class="login-body">
+  <div class="login-container">
+    <div class="login-logo">
+      <img src="img/logo.png" alt="Cooper Ingeniería" />
+      <h1>¡BIENVENIDO!</h1>
+    </div>
+
+    <!-- Un solo formulario -->
+    <form id="login-form" class="login-form" method="GET">
+      <label for="email">Correo electrónico</label>
+      <input type="email" id="email" name="email" placeholder="email@example.com" required />
+
+      <label for="password">Contraseña</label>
+      <input type="password" id="password" name="password" placeholder="********" required />
+
+      <div class="login-options">
+        <label>
+          <input type="checkbox" name="remember" />
+          Recordar
+        </label>
+        <a href="#">Olvidé contraseña</a>
+      </div>
+
+      <!-- Tres botones con el mismo formulario, cada uno redirige a una página distinta -->
+      <div class="role-buttons">
+        <button type="button" id="btnOperador">Ingresar como Operador</button>
+        <button type="button" id="btnIngeniero">Ingresar como Ingeniero</button>
+        <button type="button" id="btnJefe">Ingresar como Jefe</button>
+      </div>
+    </form>
+  </div>
+
+  <script>
+    // Referencia al formulario
+    const loginForm = document.getElementById('login-form');
+
+    // Botones
+    const btnOperador = document.getElementById('btnOperador');
+    const btnIngeniero = document.getElementById('btnIngeniero');
+    const btnJefe = document.getElementById('btnJefe');
+
+    // Asignar evento click a cada botón
+    btnOperador.addEventListener('click', () => {
+      loginForm.action = 'dashboard.html';
+      loginForm.submit();
+    });
+
+    btnIngeniero.addEventListener('click', () => {
+      loginForm.action = 'dashboard-ingeniero.html';
+      loginForm.submit();
+    });
+
+    btnJefe.addEventListener('click', () => {
+      loginForm.action = 'dashboard-jefe.html';
+      loginForm.submit();
+    });
+  </script>
+</body>
+</html>
