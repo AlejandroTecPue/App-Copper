@@ -3,7 +3,7 @@ session_start();
 require_once 'config/db.php';
 
 // Solo permitir si quien hace la petición es el admin
-if (!isset($_SESSION['user_id']) || $_SESSION['role'] !== 'admin') {
+if (!isset($_SESSION['user_id']) || $_SESSION['role'] !== 'supervisor') {
     die("No tienes permiso para realizar esta acción.");
 }
 

@@ -22,7 +22,7 @@ if (!isset($_SESSION['user_id']) || $_SESSION['role'] !== 'supervisor') {
       <h1>Registrar Nuevo Usuario</h1>
     </div>
 
-    <form id="registro-form" class="login-form" method="POST" action="crear_usuario.php">
+    <form id="registro-form" class="login-form" method="POST" action="createUser.php">
       <label for="email">Correo electrónico</label>
       <input type="email" id="email" name="email" required />
 
@@ -33,7 +33,6 @@ if (!isset($_SESSION['user_id']) || $_SESSION['role'] !== 'supervisor') {
       <select id="role" name="role" required>
         <option value="operador">Operador</option>
         <option value="ingenierio">Ingeniero</option>
-        <option value="supervisor">Supervisor</option>
       </select>
 
       <button type="submit">Registrar Usuario</button>
